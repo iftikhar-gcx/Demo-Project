@@ -24,7 +24,8 @@ jobs:
 
       - name: Deploying to Netlify
         run : |
-          --dir=Demo_HTML \
+          netlify deploy --prod \
+          --dir=. \
           --site ${{ secrets.NETLIFY_DEMO_SITE_ID }} \
           --auth ${{ secrets.NETLIFY_DEMO_TOKEN }}
 
