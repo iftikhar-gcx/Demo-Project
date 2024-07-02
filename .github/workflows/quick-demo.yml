@@ -13,6 +13,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Checking files (Before deploy)
+        run : ls *
+
       - name: Installing Netlify CLI
         run : npm install -g netlify-cli
 
@@ -23,4 +26,6 @@ jobs:
           --site ${{ secrets.NETLIFY_DEMO_SITE_ID }} \
           --auth ${{ secrets.NETLIFY_DEMO_TOKEN }}
 
+      - name: Checking files (After deployment)
+        run : ls *
             
